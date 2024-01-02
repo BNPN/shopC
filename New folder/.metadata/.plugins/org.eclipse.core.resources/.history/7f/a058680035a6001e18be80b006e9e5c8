@@ -1,0 +1,31 @@
+create table if not exists category(
+	id int primary key Auto_increment,
+	name varchar(255)
+
+)
+create table if not exists product (
+  productid INT  PRIMARY KEY AUTO_INCREMENT,
+   productName varchar(255),
+   productImg varchar(255),
+   productCost int,
+   productDiscount int,
+   id int,
+   foreign key id references category(id)
+);
+create table if not exists product (
+   customerId INT  PRIMARY KEY AUTO_INCREMENT,
+   customerName varchar(255),
+   customerAddress varchar(255),
+   customerEmail varchar(255),
+   customerMobile varchar(255),
+   customerPassword varchar(255)
+);
+
+create table if not exists customer_Cart(
+	customerId int,
+	productId int,
+	primary key (customerId,productId),
+	foreign key customerId references customer(customerId),
+	foreign key productId references product(productId)
+
+)

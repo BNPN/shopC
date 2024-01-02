@@ -1,0 +1,99 @@
+package com.example.demo.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="customer")
+public class Customer {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="customerId")
+	private int customerId;
+	
+	@Column(name="customerName")
+	private String customerName;
+	
+	@Column(name="customerAddress")
+	private String customerAddress;
+	
+	@Column(name="customerEmail")
+	private String customerEmail;
+	
+	@Column(name="customerMobile")
+	private String customerMobile;
+	
+	@Column(name="customerPassword")
+	private String customerPassword;
+
+	public Customer() {
+		super();
+	}
+
+	public Customer(int customerId, String customerName, String customerAddress, String customerEmail,
+			String customerMobile, String customerPassword) {
+		super();
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.customerAddress = customerAddress;
+		this.customerEmail = customerEmail;
+		this.customerMobile = customerMobile;
+		this.customerPassword = customerPassword;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+
+	public void setCustomerAddress(String customerAddress) {
+		this.customerAddress = customerAddress;
+	}
+
+	public String getCustomerEmail() {
+		return customerEmail;
+	}
+
+	public void setCustomerEmail(String customerEmail) {
+		this.customerEmail = customerEmail;
+	}
+
+	public String getMobileNumber() {
+		return customerMobile;
+	}
+
+	public void setMobileNumber(String customerMobile) {
+		this.customerMobile = customerMobile;
+	}
+
+	public String getCustomerPassword() {
+		return customerPassword;
+	}
+
+	public void setCustomerPassword(String customerPassword) {
+		this.customerPassword = customerPassword;
+	}
+	
+	
+
+}

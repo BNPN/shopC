@@ -1,0 +1,37 @@
+package com.example.demo.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.model.Category;
+
+import com.example.demo.repository.CategoryJpaRepository;
+import com.example.demo.repository.CategoryRepository;
+
+public class CategoryService implements CategoryRepository {
+	
+	@Autowired
+	public CategoryJpaRepository cJR;
+
+	@Override
+	public ArrayList<Category> getCategories() {
+		List<Category> category= cJR.findAll();
+		ArrayList<Category> categories=new ArrayList<>(category);
+		return categories;
+	}
+
+	@Override
+	public Category addCategory(Category category) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Category getCategoryById(int CategoryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
